@@ -3,16 +3,39 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import {CdkTableModule} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SideNavComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    DragDropModule
   ],
   providers: [],
+  exports: [
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
