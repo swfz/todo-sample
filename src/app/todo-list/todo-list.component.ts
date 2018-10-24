@@ -44,11 +44,11 @@ export class TodoListComponent implements OnInit {
     }
   }
 
-  addTask(task: string){
+  addTask(task: string): void {
     this.todo.push(task);
   }
 
-  deleteTask(data,index){
+  deleteTask(data: any[], index: number): void {
     data.splice(index,1);
   }
 }
