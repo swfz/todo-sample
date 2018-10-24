@@ -9,8 +9,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {CdkTreeModule} from '@angular/cdk/tree';
-import {CdkTableModule} from '@angular/cdk/table';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -28,12 +27,11 @@ import {CdkTableModule} from '@angular/cdk/table';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    DragDropModule
+    DragDropModule,
+    MatInputModule
   ],
   providers: [],
   exports: [
-    CdkTableModule,
-    CdkTreeModule,
     DragDropModule,
   ],
   bootstrap: [AppComponent]

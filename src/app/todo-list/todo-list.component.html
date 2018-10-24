@@ -1,3 +1,9 @@
+<div>
+  <mat-form-field class="example-full-width">
+    <input #task matInput placeholder="Task" value="task">
+  </mat-form-field>
+  <button mat-stroked-button color="primary" (click)="addTask(task.value)">Add</button>
+</div>
 
 <div class="example-container">
   <h2>To do</h2>
@@ -9,7 +15,14 @@
     [cdkDropListConnectedTo]="[doneList,doingList]"
     class="example-list"
     (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of todo; let i=index" cdkDrag>
+      {{item}}
+      <button mat-icon-button color="warn" (click)="deleteTask(todo,i)">
+        <mat-icon aria-label="Example icon-button with a heart icon">
+          delete
+        </mat-icon>
+      </button>
+    </div>
   </div>
 </div>
 <div class="example-container">
@@ -22,7 +35,14 @@
     [cdkDropListConnectedTo]="[todoList,doneList]"
     class="example-list"
     (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of doing" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of doing; let i=index" cdkDrag>
+      {{item}}
+      <button mat-icon-button color="warn" (click)="deleteTask(doing,i)">
+        <mat-icon aria-label="Example icon-button with a heart icon">
+          delete
+        </mat-icon>
+      </button>
+    </div>
   </div>
 </div>
 <div class="example-container">
@@ -35,6 +55,13 @@
     [cdkDropListConnectedTo]="[todoList,doingList]"
     class="example-list"
     (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    <div class="example-box" *ngFor="let item of done; let i=index" cdkDrag>
+      {{item}}
+      <button mat-icon-button color="warn" (click)="deleteTask(done,i)">
+        <mat-icon aria-label="Example icon-button with a heart icon">
+          delete
+        </mat-icon>
+      </button>
+    </div>
   </div>
 </div>

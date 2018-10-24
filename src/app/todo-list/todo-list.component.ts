@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
@@ -44,4 +44,11 @@ export class TodoListComponent implements OnInit {
     }
   }
 
+  addTask(task: string){
+    this.todo.push(task);
+  }
+
+  deleteTask(data,index){
+    data.splice(index,1);
+  }
 }
